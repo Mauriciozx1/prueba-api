@@ -1,4 +1,4 @@
-# Laravel 9.0
+# API SPA Laravel 9 + Vue3
 ## Sobre Repositorio
 
 Pequeño sistema el cual contiene lo siguiente:
@@ -12,7 +12,7 @@ Pequeño sistema el cual contiene lo siguiente:
 
 ## Requerimientos
 
-- Laravel 9                                                                  8
+- Laravel 9
 - PHP 8.1.6
 - Composer
 - Apache
