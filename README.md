@@ -31,8 +31,8 @@ Pequeño sistema el cual contiene lo siguiente:
 - `cp .env.example .env`
 - Actualizar `.env` y establecer las credenciales de la base de datos
 - `php artisan migrate`
-- Si se desea poblar la tabla Users, ejecutar `php artisan db:seed --class=UserSeeder`
+- `php artisan db:seed --class=UserSeeder`
 - `npm install`
 - `npm run dev`
 - `php artisan serve`
-- Listo
+- Ingresa `http://localhost:8000` con: `email:demoprueba@test.cl y contraseña:password`
