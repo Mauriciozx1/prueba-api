@@ -1,41 +1,62 @@
 <template>
     <div class="cotainer">
-        <div class="m-2">
-            <!--Paginador de la lista de usuarios-->
-                <paginate
-                    v-model="page"
-                    :page-count="10"
-                    :click-handler="getResults"
-                    :prev-text="'Atras'"
-                    :next-text="'Siguiente'"
-                    :container-class="'pagination d-flex' "
-                    :page-class="'page-item'"
-                    :page-range="2"
-                    :margin-pages="1"
-                    >
-                </paginate>
-            <!--Fin Paginador de la lista de usuarios-->
-            </div>
-        <div class="row justify-content-center align-items-center">
-            <div class="col-md-12 text-center m-2">
-                <button class="btn btn-primary mx-auto" @click="viewModal(true, {})" data-bs-toggle="modal" data-bs-target="#user-modal">Agregar</button>
-            </div>
+        <nav class="m-2 ">
+        <!--Paginador de la lista de usuarios-->
+            <paginate
+                v-model="page"
+                :page-count="users.last_page+1"
+                :click-handler="getResults"
+                :prev-text="'Atras'"
+                :next-text="'Siguiente'"
+                :container-class="'pagination d-flex' "
+                :page-class="'page-item'"
+                :page-link="'page-link'"
+                :page-range="2"
+                :margin-pages="1"
+                >
+            </paginate>
+        <!--Fin Paginador de la lista de usuarios-->
+        </nav>
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="button m-2">
+                    <button class="btn btn-primary mx-auto" @click="viewModal(true, {})" data-bs-toggle="modal" data-bs-target="#user-modal"> Agregar usuario <i class="fas fa-plus"></i></button>
             
-            <h3 v-if="!users.data[0]" class="text-center">No existen más datos</h3>
+                </div>
+                </div>
+            <h2 class="text-center">Lista de usuarios</h2>
+            <div class="hr">
+                <hr class="m-4 ">
+            </div>
+            <h4 v-if="!users.data[0]" class="text-center m-4">No existen más datos <i class="fas fa-exclamation"></i></h4>
             <!--Lista de usuarios-->
-            <div class="col-md-4 m-2" v-for="user in users.data" :key="user.id">
-                <div class="card">
+            <div class="col-md-6 col-lg-4 m-2" v-for="user in users.data" :key="user.id">
+                <div class="card shadow p-3 mb-5 bg-body rounded">
                     <div class="card-body text-center">
                         <div class="buttons">
-                            <button class="btn btn-secondary m-2" @click="viewModal(false, user)" data-bs-toggle="modal" data-bs-target="#user-modal">Editar</button>
-                            <button class="btn btn-danger m-2" @click="deleteUser(user.id)">Eliminar</button>
+                            <button class="btn btn-sm btn-warning m-2" @click="viewModal(false, user)" data-bs-toggle="modal" data-bs-target="#user-modal"><i class="fas fa-edit"></i></button>
+                            <button class="btn btn-sm btn-danger m-2" @click="deleteUser(user.id)"><i class="fas fa-trash"></i></button>
                         </div>
-                        <ul>
-                            <li>{{user.name}}</li>
-                            <li>{{user.email}}</li>
-                            <li>{{user.birthdate}}</li>
-                            <li>Estado : {{user.active ? 'Activado' : 'Desactivado'}}</li>
-                        </ul>
+                        <table class="table table-responsive">
+                            <tbody>
+                                <tr>
+                                    <th>Estado:</th>
+                                    <td :class="user.active ? 'text-success':'text-danger'">{{user.active ? 'Activado' : 'Desactivado'}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Nombre:</th>
+                                    <td>{{user.name}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Email:</th>
+                                    <td>{{user.email}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Nacimiento:</th>
+                                    <td>{{user.birthdate}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -74,6 +95,7 @@ export default {
             await axios.get('api/dashboard?page=' + this.page)
                 .then(response => {
                     this.users = response.data;
+                    console.log(response);
                     
                 });
         },
@@ -117,8 +139,5 @@ export default {
 </script>
 
 <style>
-.pagination{
-    display: inline-block;
-    text-align: center;
-}
+
 </style>

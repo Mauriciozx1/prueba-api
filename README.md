@@ -7,8 +7,8 @@ Pequeño sistema el cual contiene lo siguiente:
 - Se incorporan validaciones en formularios del frontend, como validaciones en las solicitudes del backend.
 - La lista de usuarios esta compaginada.
 - La lista de usuarios se ordena por nombre atravez del local Scope.
-- Se utilizan FormRequest para la validación de la data, ApiResources para el envio de data y Model Binding en las rutas.
-- Dentro de la carpeta public/bootstrap.js se encuentra el "header" creado para realizar su verificación. Y dentro de App\Http\Middleware se encuentra la validación del "header".
+- Se utiliza UserRequest para la validación de la data, UserResources para el envio de data y se utiliza ModelBinding en rutas.
+- Dentro de la carpeta `public/bootstrap.js` se encuentra el "header" creado para realizar su verificación. Y dentro de `App\Http\Middleware` se encuentra `HeaderMiddleware` que realiza la validación del "header: x-ccloud-auth".
 
 ## Requerimientos
 
