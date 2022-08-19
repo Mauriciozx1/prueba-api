@@ -3,9 +3,6 @@
         <div class="row">
             <div class="col-12">
                 <div class="card shadow-sm">
-                    <div class="card-header">
-                        <h3>Dashboard</h3>
-                    </div>
                     <user-lists ></user-lists>
                 </div>
             </div>

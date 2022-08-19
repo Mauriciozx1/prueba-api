@@ -13,7 +13,7 @@ Pequeño sistema el cual contiene lo siguiente:
 ## Requerimientos
 
 - Laravel 9
-- PHP 8.1.6
+- PHP 8.1
 - Composer
 - Apache
 - Vue 3

@@ -31,7 +31,7 @@
             <h4 v-if="!users.data[0]" class="text-center m-4">No existen más datos <i class="fas fa-exclamation"></i></h4>
             <!--Lista de usuarios-->
             <div class="col-md-6 col-lg-4 m-2" v-for="user in users.data" :key="user.id">
-                <div class="card shadow p-3 mb-5 bg-body rounded">
+                <div class="card shadow p-3 mb-5 bg-body rounded" style="background:#e8e8e8 !important;">
                     <div class="card-body text-center">
                         <div class="buttons">
                             <button class="btn btn-sm btn-warning m-2" @click="viewModal(false, user)" data-bs-toggle="modal" data-bs-target="#user-modal"><i class="fas fa-edit"></i></button>

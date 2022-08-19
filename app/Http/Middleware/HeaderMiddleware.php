@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-
+use Symfony\Component\HttpKernel\Exception\HttpException;
 class HeaderMiddleware
 {
     /**
@@ -17,7 +17,9 @@ class HeaderMiddleware
     public function handle(Request $request, Closure $next)
     {
         if($request->header('x-ccloud-auth') != 'prueba'){  
+            //return response()->view('errors.403', ['message' => 'Unauthorized action.'], 403);
             return abort(403);  
+            
         }
         return $next($request);
     }

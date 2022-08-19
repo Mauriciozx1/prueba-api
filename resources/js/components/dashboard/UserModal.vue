@@ -21,19 +21,19 @@
                     <!--Fin Lista de errores-->
                     
                     <div class="form-group col-12">
-                        <label for="name" class="font-weight-bold">Nombre</label>
+                        <label for="name" class="font-weight-bold">Nombre *</label>
                         <input type="text" name="name" v-model="user.name" id="name" placeholder="Ingresa tu nombre" class="form-control" required>
                     </div>
                     <div class="form-group col-12 my-2">
-                        <label for="email" class="font-weight-bold">Correo</label>
+                        <label for="email" class="font-weight-bold">Correo *</label>
                         <input type="email" name="email" v-model="user.email" id="email" placeholder="Ingresa correo electronico" class="form-control" required>
                     </div>
                     <div class="form-group col-12 my-2">
-                        <label for="birthdate" class="font-weight-bold">Fecha de nacimiento</label>
+                        <label for="birthdate" class="font-weight-bold">Fecha de nacimiento *</label>
                         <input type="date" name="birthdate" v-model="user.birthdate" id="birthdate"  class="form-control" required>
                     </div>
                     <div class="form-group col-12">
-                        <label for="password" class="font-weight-bold">{{type ? 'Contraseña' : 'Nueva contraseña'}}</label>
+                        <label for="password" class="font-weight-bold">{{type ? 'Contraseña *' : 'Nueva contraseña (opcional)'}}</label>
                         <input type="password" name="password" v-model="user.password" id="password" placeholder="Ingresa una contraseña" class="form-control" :required="type">
                     </div>
                     <div class="form-group col-12 my-2">
@@ -47,10 +47,12 @@
                             <label class="form-check-label" for="flexSwitchCheckDefault">{{user.active ? 'Activado' : 'Desactivado'}}</label>
                         </div>
                     </div>
+                     <small class="text-end">* Obligatorio</small>
                     <div class="col-12 mb-2">
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                             <button type="submit" class="btn btn-primary" :disabled="processing">{{type ? 'Crear usuario' : 'Actualizar usuario'}}</button>
+                           
                         </div>
                     </div>
                 </form>

@@ -16,12 +16,12 @@
                             </div>
                             <div class="form-group col-12">
                                 <label for="email" class="font-weight-bold">Correo electronico</label>
-                                <input type="text" v-model="auth.email" name="email" id="email" class="form-control">
+                                <input type="text" v-model="auth.email" name="email" id="email" class="form-control" required>
                                 <small>Email test: demoprueba@test.cl</small>
                             </div>
                             <div class="form-group col-12 my-2">
                                 <label for="password" class="font-weight-bold">Contraseña</label>
-                                <input type="password" v-model="auth.password" name="password" id="password" class="form-control">
+                                <input type="password" v-model="auth.password" name="password" id="password" class="form-control" required>
                                 <small>Contraseña test: password</small>
                             </div>
                             <div class="col-12 mb-2">
