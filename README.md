@@ -30,6 +30,7 @@ Pequeño sistema el cual contiene lo siguiente:
 - `composer install`
 - `cp .env.example .env`
 - Actualizar `.env` y establecer las credenciales de la base de datos
+- `php artisan key:generate`
 - `php artisan migrate`
 - `php artisan db:seed --class=UserSeeder`
 - `npm install`
