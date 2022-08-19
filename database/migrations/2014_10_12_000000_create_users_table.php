@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->datetime('birthdate');
-            $table->boolean('active',false);
+            $table->boolean('active')->nullable()->default(0);
             $table->timestamps();
             $table->softDeletes();
         });
