@@ -15,7 +15,6 @@ Pequeño sistema el cual contiene lo siguiente:
 - Laravel 9
 - PHP 8.1
 - Composer
-- Apache
 - Vue 3
 
 ## Contenido 
